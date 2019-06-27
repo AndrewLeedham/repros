@@ -1,0 +1,30 @@
+{
+  "name": "jest-fs-spy-leak",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@jest/test-sequencer": "^24.8.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "jest-circus": "^24.8.0",
+    "jest-junit": "^6.4.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "repros",
+  "version": "1.0.0",
+  "description": "A mono-repo to store various repros for bug reporting.",
+  "main": "index.js",
+  "repository": "git@github.com:AndrewLeedham/repros.git",
+  "author": "Andrew Leedham <AndrewLeedham@Outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
