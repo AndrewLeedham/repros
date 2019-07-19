@@ -10,13 +10,13 @@ const ajv = new Ajv({
     allErrors: true
 });
 
-console.log('example valid: ', ajv.validateSchema(exampleJson));
-console.log('fixed valid: ', ajv.validateSchema(fixedJson));
+console.log('example valid: ', ajv.validateSchema(exampleJson)); // true
+console.log('fixed valid: ', ajv.validateSchema(fixedJson)); // true
 
 const value = {
     'with-dash': 'example',
     'without': 'example'
 }
 
-console.log('check example: ', ajv.compile(exampleJson)(value));
-console.log('check fixed: ', ajv.compile(fixedJson)(value));
+console.log('check example: ', ajv.compile(exampleJson)(value)); // false
+console.log('check fixed: ', ajv.compile(fixedJson)(value)); // true
