@@ -1,0 +1,13 @@
+{
+  "name": "ts-json-schema-generator-string-property",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-json-schema-generator": "^0.50.2"
+  },
+  "scripts": {
+    "generate": "ts-json-schema-generator -c --path example.ts --type Example > ./example.json",
+    "verify": "node verify.js"
+  }
+}
