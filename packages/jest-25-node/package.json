@@ -1,0 +1,17 @@
+{
+  "name": "jest-25-node",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "docker:build": "docker-compose build && docker-compose run --rm jest-25-node bash -c \"yarn\"",
+    "docker:test": "docker-compose run --rm jest-25-node bash -c \"yarn test\""
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "25.1.0"
+  }
+}

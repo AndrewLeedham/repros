@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  jest-25-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      shm_size: "1gb"
+    command: yarn
+    volumes:
+      - ./:/var/build/repo
