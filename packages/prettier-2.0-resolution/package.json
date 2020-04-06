@@ -1,0 +1,14 @@
+{
+  "name": "prettier-2.0-resolution",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier ."
+  },
+  "prettier": "@xerox/prettier-config",
+  "devDependencies": {
+    "prettier": "^2.0.3",
+    "@xerox/prettier-config": "2.2.1"
+  }
+}
