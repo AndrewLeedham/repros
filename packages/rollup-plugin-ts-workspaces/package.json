@@ -1,0 +1,25 @@
+{
+    "name": "rollup-plugin-ts-workspaces",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+        "build": "rm -rf ./packages/child/dist &&  rollup -c"
+    },
+    "dependencies": {
+        "@rollup/plugin-commonjs": "13.0.0",
+        "@rollup/plugin-node-resolve": "8.1.0",
+        "@wessberg/rollup-plugin-ts": "1.2.27",
+        "rollup": "2.21.0",
+        "typescript": "^3.9.6",
+        "vhtml": "AndrewLeedham/vhtml"
+    },
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@babel/plugin-transform-react-jsx": "^7.10.4",
+        "@types/react": "^16.9.41",
+        "react": "^16.13.1"
+    }
+}
