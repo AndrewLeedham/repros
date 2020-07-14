@@ -1,4 +1,4 @@
-const ts = require("typescript");
+import * as ts from "typescript";
 
 function sourceVisitor(context, sf) {
   const visitor = (node) => {
@@ -16,7 +16,7 @@ function sourceVisitor(context, sf) {
   return visitor;
 }
 
-module.exports = function transform() {
+export default function transform() {
   return (context) => {
     return (sourceFile) =>
       ts.visitNode(sourceFile, sourceVisitor(context, sourceFile));

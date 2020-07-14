@@ -1,8 +1,10 @@
-const ts = require('@wessberg/rollup-plugin-ts');
-const nodeResolve = require('@rollup/plugin-node-resolve').default;
-const commonJS = require('@rollup/plugin-commonjs');
-const path = require('path');
-const transform = require('./transform');
+import ts from '@wessberg/rollup-plugin-ts';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonJS from '@rollup/plugin-commonjs';
+import path from 'path';
+import transform from './transform';
+import {promises} from 'fs';
+const {readFile} = promises;
 
 const extensions = [".tsx", ".ts", ".jsx", ".js"];
 
@@ -11,7 +13,7 @@ const extensions = [".tsx", ".ts", ".jsx", ".js"];
 //     [entry]: `import child from "./index";\n\nexport default child;\n`,
 // };
 
-module.exports = {
+export default {
     input: './packages/child/index.tsx',
     preserveModules: true,
     external: ['child', 'react', 'react-dom', 'vhtml'],
@@ -34,11 +36,16 @@ module.exports = {
         //         return null;
         //     }
         // },
+        {
+            async load(id) {
+                if (path.extname(id) === '.tsx') {
+                    const file = await readFile(id);
+                    return file.toString().replace('import { createElement } from \'react\';', 'import createElement from \'vhtml\';');
+                }
+            }
+        },
         ts({
             transpiler: 'babel',
-            transformers: {
-                before: [transform()],
-            },
             tsconfig: "tsconfig.vhtml.json"
         })
     ],

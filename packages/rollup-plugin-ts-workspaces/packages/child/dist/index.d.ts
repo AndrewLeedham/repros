@@ -1,5 +1,5 @@
 /**
  * Child.
  */
-declare function Child(): JSX.Element;
+declare function Child(): string;
 export { Child as default };
